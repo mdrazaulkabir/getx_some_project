@@ -11,7 +11,7 @@ class BasicCounter extends StatefulWidget {
 }
 
 class _BasicCounterState extends State<BasicCounter> {
-  GetxCounterController _controller = Get.put(GetxCounterController());
+  GetxCounterController controller = Get.put(GetxCounterController());
 
   //int numberInc = 0;
 
@@ -44,13 +44,13 @@ class _BasicCounterState extends State<BasicCounter> {
             // Obx((){
             //   return CMText1(text1: "Increment number: ${_controller.number}");
             // })
-            Obx(()=>CMText1(text1: "Increment number: ${_controller.number}"))
+            Obx(()=>CMText1(text1: "Increment number: ${controller.number.value.toString()}"))
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _controller.incrementNumber();
+          controller.incrementNumber();
           // number++;
           // setState(() { });
         },
