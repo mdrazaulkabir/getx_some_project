@@ -44,10 +44,10 @@ class _ListDataState extends State<ListData> {
                     child: Obx(()=>ListTile(
                       onTap: (){
                         if(listDataController.emptyListDay.contains(listDataController.favouriteDay[index].toString())){
-                          listDataController.emptyListDay.remove(listDataController.favouriteDay[index].toString());
+                          listDataController.listDataRemove(listDataController.favouriteDay[index].toString());
                         }
                         else{
-                          listDataController.emptyListDay.add(listDataController.favouriteDay[index].toString());
+                          listDataController.listDataAdd(listDataController.favouriteDay[index].toString());
                         }
                       },
                       title: Text(listDataController.favouriteDay[index].toString(),),
